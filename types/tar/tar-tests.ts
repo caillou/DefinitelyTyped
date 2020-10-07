@@ -70,3 +70,11 @@ tar.t({
 fs.createReadStream('my-tarball.tgz')
     .pipe(tar.t())
     .on('entry', entry => console.log(entry.size));
+
+const strem = new tar.Parse();
+
+function readableStreamConsumer(s: NodeJS.ReadableStream) {}
+
+stream.on('entry', (e: tar.ReadEntry) => {
+    readableStreamConsumer(e);
+});
